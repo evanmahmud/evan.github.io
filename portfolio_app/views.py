@@ -27,6 +27,7 @@ from .models import Project
 class ProjectListView(BuildableListView):
     model = Project
     template_name = 'portfolio_app/project_list.html'
+    build_path = "index.html"
 
     def build_queryset(self):
         """
