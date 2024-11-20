@@ -1,0 +1,12 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block content %}
+    <h2>My Projects</h2>
+    <ul>
+        {% for project in projects %}
+            <li>
+                <a href="{% url 'project_detail' project.id %}">{{ project.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
