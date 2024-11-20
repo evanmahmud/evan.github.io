@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'bakery',
+    'portfolio_app',
 ]
 
 MIDDLEWARE = [
@@ -100,6 +102,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+BAKERY_VIEWS = (
+    'portfolio_app.views.ProjectListView',
+    'portfolio_app.views.ProjectDetailView',
+    # ... add other bakery views here ...
+)
+
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -121,3 +129,6 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+BUILD_DIR = BASE_DIR / 'build'  # Or another directory of your choice
+STATIC_ROOT = BASE_DIR / 'staticfiles'

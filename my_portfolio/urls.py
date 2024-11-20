@@ -23,7 +23,7 @@ urlpatterns = [
 '''
 
 
-
+'''
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
@@ -34,4 +34,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),  # Keep this line only once
     path('', include('portfolio_app.urls')),
     path('', lambda request: HttpResponse("Evan's Portfolio"), name='home'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)'''
+
+
+
+# my_portfolio/urls.py
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # path('', include('portfolio_app.urls')),  # Comment this out temporarily
+    path('', lambda request: HttpResponse("Hello"), name='home'),  # Add a simple view
+]
+
